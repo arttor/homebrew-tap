@@ -4,11 +4,11 @@ class Helmify < Formula
   version "v0.3.0"
   license "MIT"
 
-  if OS.Mac? && Hardware::CPU.intel?
+  if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/arttor/helmify/releases/download/v0.3.0/helmify-v0.3.0-darwin-amd64.tar.gz"
     sha256 "7c7651d8a47dcc0ba50d9b870f107cbd0988c5f6b259c3958194df03ee9c7f07"
   end
-  if OS.Mac? && Hardware::CPU.arm?
+  if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/arttor/helmify/releases/download/v0.3.0/helmify-v0.3.0-darwin-arm64.tar.gz"
     sha256 "2393f1e2c3789eee66ad0b3ce08a81dbb7338d6303de91261a22ed31839d381f"
   end
