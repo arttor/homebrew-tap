@@ -5,29 +5,29 @@
 class Helmify < Formula
   desc "Creates Helm chart from Kubernetes yaml."
   homepage "https://github.com/arttor/helmify"
-  version "0.3.2"
+  version "0.3.3"
   license "MIT"
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.2/helmify_0.3.2_macOS_64-bit.tar.gz"
-      sha256 "a129b29555ad2bb4b9b5b476079082f32b067a683baa9ff1359158681c2ec309"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.2/helmify_0.3.2_macOS_arm64.tar.gz"
-      sha256 "4838d3f53306ff7e5f94b3e13cd9a5f5d1870e46551678e484daa5209b34fef0"
+      url "https://github.com/arttor/helmify/releases/download/v0.3.3/helmify_0.3.3_macOS_arm64.tar.gz"
+      sha256 "0d3fbdc601f0722f9b1a663cb837a50f594f1fa596a72fee8b6f91edffaed472"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/arttor/helmify/releases/download/v0.3.3/helmify_0.3.3_macOS_64-bit.tar.gz"
+      sha256 "e1621b55a3fbd54667dd83186729cf96b9271fdeda2a80523f9b949ffb20d00b"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.2/helmify_0.3.2_Linux_64-bit.tar.gz"
-      sha256 "251e59e8b1e01d894ec726fb46288cee5afc745fa2f0b9ec3d83dd03e11e48e3"
+      url "https://github.com/arttor/helmify/releases/download/v0.3.3/helmify_0.3.3_Linux_64-bit.tar.gz"
+      sha256 "0467b5e53ecd66dec74578784ad374020fb5124bbd603066f2d4aac4d5395567"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.2/helmify_0.3.2_Linux_arm64.tar.gz"
-      sha256 "c5fab926230d6ff755e3e20d4c6ddc97d27625cbf0bfd80f1707dc82845b9a7f"
+      url "https://github.com/arttor/helmify/releases/download/v0.3.3/helmify_0.3.3_Linux_arm64.tar.gz"
+      sha256 "3483cd8eac231a5aae95c989187893e0cf25f82584dba2fcbc2a65ada1d9d2c8"
     end
   end
 
