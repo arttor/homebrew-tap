@@ -7,7 +7,6 @@ class Helmify < Formula
   homepage "https://github.com/arttor/helmify"
   version "0.3.3"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.arm?
