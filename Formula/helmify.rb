@@ -5,13 +5,21 @@
 class Helmify < Formula
   desc "Creates Helm chart from Kubernetes yaml."
   homepage "https://github.com/arttor/helmify"
-  version "0.3.10"
+  version "0.3.11"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.10/helmify_0.3.10_macOS_arm64.tar.gz"
-      sha256 "887f5205e0e77ea9aa2e24d4eb014a76afc2b0a23979888d2179c72ea43174ce"
+      url "https://github.com/arttor/helmify/releases/download/v0.3.11/helmify_0.3.11_macOS_arm64.tar.gz"
+      sha256 "0b07d31cabf2824655ce9bdc7ce94d4b109869a1c257de7627ee7ac610f77bd7"
+
+      def install
+        bin.install "helmify"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/arttor/helmify/releases/download/v0.3.11/helmify_0.3.11_macOS_64-bit.tar.gz"
+      sha256 "4dbf1b47af14484b4cbb8b8328e4ae0d89b13ee3cf301f221075f4ce74e78380"
 
       def install
         bin.install "helmify"
@@ -20,9 +28,17 @@ class Helmify < Formula
   end
 
   on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/arttor/helmify/releases/download/v0.3.11/helmify_0.3.11_Linux_64-bit.tar.gz"
+      sha256 "0a52321516a6fc8b68e8e010a460f1e976973fbbb3c16281598f3d82e50e7904"
+
+      def install
+        bin.install "helmify"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.10/helmify_0.3.10_Linux_arm64.tar.gz"
-      sha256 "c837a1f3ee3ede1c607ad171a134af0e6d149c3b5f5f95605457466d40b259d7"
+      url "https://github.com/arttor/helmify/releases/download/v0.3.11/helmify_0.3.11_Linux_arm64.tar.gz"
+      sha256 "1d3811efe038116e235b567edfeece4ea150a3dae012168af0c8d6dfb2d8ace8"
 
       def install
         bin.install "helmify"
