@@ -5,21 +5,21 @@
 class Helmify < Formula
   desc "Creates Helm chart from Kubernetes yaml."
   homepage "https://github.com/arttor/helmify"
-  version "0.3.20"
+  version "0.3.21"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.20/helmify_0.3.20_macOS_arm64.tar.gz"
-      sha256 "537e2d698a9cfa3b0ed11766ade4488f81b4e2bc7c4ab71678d2c82d0b9f6c6b"
+      url "https://github.com/arttor/helmify/releases/download/v0.3.21/helmify_0.3.21_macOS_arm64.tar.gz"
+      sha256 "8ade77ab5c72a1b089b469c743317bfc72232a6f1bce249b269b76c3095d548c"
 
       def install
         bin.install "helmify"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.20/helmify_0.3.20_macOS_64-bit.tar.gz"
-      sha256 "60186197540e7cd365da27a240190af2f12bdc07f36ba43130bdb11332723a51"
+      url "https://github.com/arttor/helmify/releases/download/v0.3.21/helmify_0.3.21_macOS_64-bit.tar.gz"
+      sha256 "382aa9cffb2073716e3e9b5a3b02808f505327cbec84a4b057095bc3580e752d"
 
       def install
         bin.install "helmify"
@@ -28,17 +28,17 @@ class Helmify < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.20/helmify_0.3.20_Linux_arm64.tar.gz"
-      sha256 "61dc5037e36008ef3212585be9e24612bd472dfaf9aa8c2847e144c8fedfdee0"
+    if Hardware::CPU.intel?
+      url "https://github.com/arttor/helmify/releases/download/v0.3.21/helmify_0.3.21_Linux_64-bit.tar.gz"
+      sha256 "3aebfa4304c97d0bc78b08ef2769f3267f97bb4de6e89433d71f989d716c6b42"
 
       def install
         bin.install "helmify"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.20/helmify_0.3.20_Linux_64-bit.tar.gz"
-      sha256 "254895d88118f5585276e715839f53d17ada14ed43c9aff4e29278a7dc0564d5"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/arttor/helmify/releases/download/v0.3.21/helmify_0.3.21_Linux_arm64.tar.gz"
+      sha256 "77ced6d9b3ecb9f9ef7268f452a40a470b797f200cbc6599cc7eab7110b041c3"
 
       def install
         bin.install "helmify"
