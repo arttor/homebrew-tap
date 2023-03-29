@@ -5,21 +5,21 @@
 class Helmify < Formula
   desc "Creates Helm chart from Kubernetes yaml."
   homepage "https://github.com/arttor/helmify"
-  version "0.3.33"
+  version "0.3.34"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.33/helmify_0.3.33_macOS_64-bit.tar.gz"
-      sha256 "d5eb8fd21ba15ed8fb34640c1169f283aa6e1211a2f79da8846ae79f861e3865"
+    if Hardware::CPU.arm?
+      url "https://github.com/arttor/helmify/releases/download/v0.3.34/helmify_0.3.34_macOS_arm64.tar.gz"
+      sha256 "bc059594543d7b64463e69ec9808f0f6923915fa29b49209ef3bb800427d600d"
 
       def install
         bin.install "helmify"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.33/helmify_0.3.33_macOS_arm64.tar.gz"
-      sha256 "f21c5506cda521c1a8bd14e9425769c91cf2f8211f0b7dc7c746aa7be4aa6d4d"
+    if Hardware::CPU.intel?
+      url "https://github.com/arttor/helmify/releases/download/v0.3.34/helmify_0.3.34_macOS_64-bit.tar.gz"
+      sha256 "8a801747d1e561acda93c5b5d970ca9954a3b87e7412cd5aa675af3750c268cc"
 
       def install
         bin.install "helmify"
@@ -28,17 +28,17 @@ class Helmify < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.33/helmify_0.3.33_Linux_64-bit.tar.gz"
-      sha256 "ea105d528e4f0104cba7200e9f2ac4c5587530730803dc4a2d93cda68f5000f6"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/arttor/helmify/releases/download/v0.3.34/helmify_0.3.34_Linux_arm64.tar.gz"
+      sha256 "3922c91a57ae7239f48a01307f0960298a84d68e3e9e6d0b43c9023c75dc76dd"
 
       def install
         bin.install "helmify"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arttor/helmify/releases/download/v0.3.33/helmify_0.3.33_Linux_arm64.tar.gz"
-      sha256 "6f1316d7ed501fa0b524888782a9280127ac4568bbb0b14c996f0ab755f0b340"
+    if Hardware::CPU.intel?
+      url "https://github.com/arttor/helmify/releases/download/v0.3.34/helmify_0.3.34_Linux_64-bit.tar.gz"
+      sha256 "29b51abb426386b40299c3a88a8487da52bce4ea4e83e26e2a9c5e4b23c427cf"
 
       def install
         bin.install "helmify"
