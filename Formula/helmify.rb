@@ -5,21 +5,21 @@
 class Helmify < Formula
   desc "Creates Helm chart from Kubernetes yaml."
   homepage "https://github.com/arttor/helmify"
-  version "0.4.3"
+  version "0.4.4"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.3/helmify_0.4.3_macOS_64-bit.tar.gz"
-      sha256 "6a45b457736eb998602d42bbdc9932ac6c62243cf5b286714f3ba89a0cf395bb"
+    if Hardware::CPU.arm?
+      url "https://github.com/arttor/helmify/releases/download/v0.4.4/helmify_0.4.4_macOS_arm64.tar.gz"
+      sha256 "efc67b63790765fdb1a71f46dd3460c1df745473b55d65f96921d5f9ebc18a2d"
 
       def install
         bin.install "helmify"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.3/helmify_0.4.3_macOS_arm64.tar.gz"
-      sha256 "25c2889b1f754d632ada4e9763412ec9261c8a3be1f7d8631eadbb2add81f22e"
+    if Hardware::CPU.intel?
+      url "https://github.com/arttor/helmify/releases/download/v0.4.4/helmify_0.4.4_macOS_64-bit.tar.gz"
+      sha256 "a68cdd281e7e2019218aabf99549312f76e9f326319f8b17c15abcf9445f6068"
 
       def install
         bin.install "helmify"
@@ -29,16 +29,16 @@ class Helmify < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.3/helmify_0.4.3_Linux_arm64.tar.gz"
-      sha256 "0b08d257da191e9b106eec0e9193cf191f9ff7f24b507ffc68286ff3cfaa1da7"
+      url "https://github.com/arttor/helmify/releases/download/v0.4.4/helmify_0.4.4_Linux_arm64.tar.gz"
+      sha256 "3226cb938f6fbf131a1d80e6a7127afb43f33022e219026c5c6af91b34426ea8"
 
       def install
         bin.install "helmify"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.3/helmify_0.4.3_Linux_64-bit.tar.gz"
-      sha256 "550fbce3f54e181029abb86188084b136f15b700cbc748e761b0577800badde8"
+      url "https://github.com/arttor/helmify/releases/download/v0.4.4/helmify_0.4.4_Linux_64-bit.tar.gz"
+      sha256 "0273591b16f060c686a0b54edcecada63883e5f46a6420e40adeabc26ab26b75"
 
       def install
         bin.install "helmify"
