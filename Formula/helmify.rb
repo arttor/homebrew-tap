@@ -5,21 +5,21 @@
 class Helmify < Formula
   desc "Creates Helm chart from Kubernetes yaml."
   homepage "https://github.com/arttor/helmify"
-  version "0.4.9"
+  version "0.4.10"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.9/helmify_Darwin_arm64.tar.gz"
-      sha256 "d1a4d97685fe6ace002f11ace1a1378bc838e7b5e68b597697fa4f9a7d106fad"
+      url "https://github.com/arttor/helmify/releases/download/v0.4.10/helmify_Darwin_arm64.tar.gz"
+      sha256 "725c9d339c183cbb8ef80a93e9b1a04f54ab3f52b783dea2c479c9b5aa1314e5"
 
       def install
         bin.install "helmify"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.9/helmify_Darwin_x86_64.tar.gz"
-      sha256 "f52001e910af4ca9d949e5e04dc6d8e073250ea2bbbd1f2352062d9b7427dff6"
+      url "https://github.com/arttor/helmify/releases/download/v0.4.10/helmify_Darwin_x86_64.tar.gz"
+      sha256 "1888823d55ab914ba8c04f02af191a0444156c58a0fc9e96ff24837bdb65a1cb"
 
       def install
         bin.install "helmify"
@@ -28,17 +28,17 @@ class Helmify < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.9/helmify_Linux_arm64.tar.gz"
-      sha256 "0ceb362f2f2def171f82c88f802826ed3057320ff9eff7e51e6b0e79f39d40eb"
+    if Hardware::CPU.intel?
+      url "https://github.com/arttor/helmify/releases/download/v0.4.10/helmify_Linux_x86_64.tar.gz"
+      sha256 "e80d9134e0566b027bab3c791f1e32147132d4c92c8daf012b91bdfead6e6b30"
 
       def install
         bin.install "helmify"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.9/helmify_Linux_x86_64.tar.gz"
-      sha256 "c2156bf6c255fc07f3f00ea948016ac9d9f36e53941c27f7e1a536645ce1067a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/arttor/helmify/releases/download/v0.4.10/helmify_Linux_arm64.tar.gz"
+      sha256 "43e6eb6332e946bd0f0c08b89f171ff25203de2f8f0524123663d0c796d62b41"
 
       def install
         bin.install "helmify"
