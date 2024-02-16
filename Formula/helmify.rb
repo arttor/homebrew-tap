@@ -5,21 +5,21 @@
 class Helmify < Formula
   desc "Creates Helm chart from Kubernetes yaml."
   homepage "https://github.com/arttor/helmify"
-  version "0.4.10"
+  version "0.4.11"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.10/helmify_Darwin_arm64.tar.gz"
-      sha256 "725c9d339c183cbb8ef80a93e9b1a04f54ab3f52b783dea2c479c9b5aa1314e5"
+      url "https://github.com/arttor/helmify/releases/download/v0.4.11/helmify_Darwin_arm64.tar.gz"
+      sha256 "c1538cf31f81611312a2395e684404856ac599268b2f0c41d6cd47574edf488e"
 
       def install
         bin.install "helmify"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.10/helmify_Darwin_x86_64.tar.gz"
-      sha256 "1888823d55ab914ba8c04f02af191a0444156c58a0fc9e96ff24837bdb65a1cb"
+      url "https://github.com/arttor/helmify/releases/download/v0.4.11/helmify_Darwin_x86_64.tar.gz"
+      sha256 "a6be0cf3e884f7ee1b000cd74a3f776fd01d3a9a48095a20bc105468d06d0b9f"
 
       def install
         bin.install "helmify"
@@ -29,16 +29,16 @@ class Helmify < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.10/helmify_Linux_x86_64.tar.gz"
-      sha256 "e80d9134e0566b027bab3c791f1e32147132d4c92c8daf012b91bdfead6e6b30"
+      url "https://github.com/arttor/helmify/releases/download/v0.4.11/helmify_Linux_x86_64.tar.gz"
+      sha256 "d05738999a27793cabeb109f85ffc606a6dcb954b027b224528848ea35d168fa"
 
       def install
         bin.install "helmify"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arttor/helmify/releases/download/v0.4.10/helmify_Linux_arm64.tar.gz"
-      sha256 "43e6eb6332e946bd0f0c08b89f171ff25203de2f8f0524123663d0c796d62b41"
+      url "https://github.com/arttor/helmify/releases/download/v0.4.11/helmify_Linux_arm64.tar.gz"
+      sha256 "bdda33b4321bd1ec816e300a345f3bca116555757a755313c956a2d7f40de30a"
 
       def install
         bin.install "helmify"
