@@ -10,16 +10,16 @@ class Helmify < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/arttor/helmify/releases/download/0.4.18/helmify_Darwin_x86_64.tar.gz"
-      sha256 "cfd51930182ebf26fec56ef590cbd167796ad87d2041b5767fb5bce51af61680"
+      url "https://github.com/arttor/helmify/releases/download/v0.4.18/helmify_Darwin_x86_64.tar.gz"
+      sha256 "e2096319e23ee4ada0931b1863491c271fea7ec5830327fb599ea622638c9f1b"
 
       def install
         bin.install "helmify"
       end
     end
     on_arm do
-      url "https://github.com/arttor/helmify/releases/download/0.4.18/helmify_Darwin_arm64.tar.gz"
-      sha256 "cae1c90cd1e350314a085b5d42d2800ca2d95aa8340a5102ad6cac3cc5981ebc"
+      url "https://github.com/arttor/helmify/releases/download/v0.4.18/helmify_Darwin_arm64.tar.gz"
+      sha256 "e0e621cf19792089c7dc030ef6fe16574d48d1fb524ce231a3ec48b371c07bb7"
 
       def install
         bin.install "helmify"
@@ -30,8 +30,8 @@ class Helmify < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/arttor/helmify/releases/download/0.4.18/helmify_Linux_x86_64.tar.gz"
-        sha256 "91dcbbca3d27e44cfb69cff803c78e485c61d6d1365d81d762ff685a1eff493f"
+        url "https://github.com/arttor/helmify/releases/download/v0.4.18/helmify_Linux_x86_64.tar.gz"
+        sha256 "367a1c310bdd65efe65075e275bdd2b802a8e19168cc755c3a39e63ca1ff104c"
 
         def install
           bin.install "helmify"
@@ -40,8 +40,8 @@ class Helmify < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/arttor/helmify/releases/download/0.4.18/helmify_Linux_arm64.tar.gz"
-        sha256 "a027c1cb5573f162f888d8b7fd05c63bfdf900196d1f7c45fa3edd4c204d2630"
+        url "https://github.com/arttor/helmify/releases/download/v0.4.18/helmify_Linux_arm64.tar.gz"
+        sha256 "bf8f72efe836ad9f97f8d02cf6dec2ec56f1c4df901d65c82b33ed9e53b3e575"
 
         def install
           bin.install "helmify"
